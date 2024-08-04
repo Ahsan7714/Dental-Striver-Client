@@ -5,70 +5,161 @@ import 'react-multi-carousel/lib/styles.css';
 import ReactStars from 'react-rating-stars-component';
 import "./Reviews.css";
 const reviews = [
+    
     {
       "id": 1,
-      "comment": "Passed my AFK. Thank you Team Strivers... ",
-      "rating": 5,
-      "description": "Student",
-      "user": {
-        "id": 1,
-        "name": "Dr. Prathibha Prakash",
-        "image": "https://example.com/avatar.jpg"
-      }
-    },
-    {
-      "id": 2,
       "comment": "Thank you Dr. Mustafa, Dr. Neha and Dr. Ahmed. You guys made it possible, it was an overwhelming time but your support and guidance helped a lot. This would not have been possible without you all- you are a ray of sunshine. Thank you thank you so much ❤️ ",
       "rating": 5,
-      "description": "Student",
       "user": {
-        "id": 2,
+        "id": 1,
         "name": "Dr. Shuchi Singh",
         "image": "https://example.com/avatar2.jpg"
       }
     },
+    
     {
-      "id": 5,
-      "comment": "Thank you Dr. Your quiz lectures helped me a lot…Thank god I joined strivers 🙏😊  … ",
-      "rating": 5,
-      "description": "Student",
-      "user": {
-        "id": 3,
-        "name": "Dr. Prabhjot",
-        "image": "https://example.com/avatar3.jpg"
-      }
-    },
-    {
-      "id": 6,
-      "comment": "I passed the Afk exam. Thank you so much Dr. Musthafa, Dr. Neha and Dr. Ahmed for your greatest support. Without your help this wouldn’t have been possible. Your lectures were very helpful for me. The most important thing is your lectures contained all the recent articles and confined notes from the reference text books. You made us focus on what is really important rather than getting overwhelmed. You taught us how to study smart instead of studying hard. Also the weekly quizzes were so helpful. That was the main reason which made me study and revise again. Your mocks were really good. Once again I thank you all soo much for being a part of this success.       ",
+      "id": 2,
+      "comment": "I passed the AFK exam! Thank you, Dr. Musthafa, Dr. Neha, and Dr. Ahmed, for your incredible support. Your focused lectures, quizzes, and mocks were invaluable. I couldn't have done it without you. Thank you for being part of this success!",
       "rating": 5,
       // "description": "Student",
       "user": {
-        "id": 1,
+        "id": 2,
         "name": "Dr. Muneera Mohayelden",
         "image": "https://example.com/avatar.jpg"
       }
     },
+    
     {
-      "id": 7,
-      "comment": "Thanks. I passed it because you guys were wonderful!!!! ",
-      "rating": 5,
-      "description": "Student",
-      "user": {
-        "id": 2,
-        "name": "Dr. Grace",
-        "image": "https://example.com/avatar2.jpg"
-      }
-    },
-    {
-      "id": 8,
-      "comment": "Moving to a new country itself is challenging and on top of that building up a career is another level, AFK being the first hurdle in that path. Graduating some 15 years ago and being out of dentistry at least 5 years ago, I didn’t want to give this exam in the first place! It took me almost 4 years to build up the confidence that this exam is not impossible! And that began when I connected with Strivers in one of their free zoom lectures. Dr.Mustafa was the first person I came across who said that this exam is doable! After putting a lot of thought into it, I joined their course. I am a person who likes to learn deep, but that’s not helpful all the time. Being my first attempt, I didn’t know where to start from! Dr.Mustafa, Dr.Neha, Dr.Ahmed steered me in the right direction. The lectures, weekly quizzes and discussions were super helpful! I just had to know what I am expected to know, they call it studying smart! I am so thankful for their guidance in helping me! You guys are super awesome!! … Above all, I want to thank God for His amazing ways and works in my life and His abundant blessings!!",
+      "id": 3,
+      "comment": "Moving to a new country and building a career is tough, with AFK as the first hurdle. After being out of dentistry for years, I lacked confidence. Strivers, especially Dr. Mustafa, Dr. Neha, and Dr. Ahmed, helped me realize the exam is doable. Their lectures, quizzes, and guidance were invaluable. I'm deeply thankful for their support and for God's blessings!",
       "rating": 5,
       // "description": "Student",
       "user": {
         "id": 3,
         "name": "Dr. M",
         "image": "https://example.com/avatar3.jpg"
+      }
+    },
+    {
+      "id": 4,
+      "comment": " I want to thank Dr. Mustafa Sherif and Dr. Neha Charak for their invaluable knowledge. Joining their course was the best decision; it was systematic and focused on key subjects. They emphasized smart learning and were always available to help. I felt confident and prepared on exam day. I highly recommend them. Congratulations to everyone who passed!",
+      "rating": 5,
+      "description": "Student",
+      "user": {
+        "id": 4,
+        "name": "Dr. Jagriti Verma",
+        "image": "https://example.com/avatar3.jpg"
+      }
+    },
+    {
+      "id": 5,
+      "comment": "Thank you so much, Dr. Mustafa Sherif and Dr. Neha Charak, for being such wonderful mentors. Your precise and thoughtful guidance was a blessing. I passed the AFK on my first attempt thanks to your counseling and teaching methods. Your approach made it manageable to prepare with a family. I’m grateful for your support and feel lucky to have been your student. Your course is outstanding. Congratulations to everyone who passed!",
+      "rating": 5,
+      // "description": "Student",
+      "user": {
+        "id": 5,
+        "name": "Dr. Haroon Sultan",
+        "image": "https://example.com/avatar.jpg"
+      }
+    },
+    {
+      "id": 6,
+      "comment": "I’m thrilled to share that I passed the AFK on my second attempt! The journey with Dr. Mustafa and Dr. Neha was incredible. They provided updated materials and helpful mocks, and their mnemonics, especially for pharma, were invaluable. Huge thanks to Dr. Mustafa, Dr. Neha, and my supportive husband, who took care of our 5-month-old daughter, allowing me to focus on my studies. ",
+      "rating": 5,
+      "description": "Student",
+      "user": {
+        "id": 6,
+        "name": "Dr. Shweta Bhatnagar",
+        "image": "https://example.com/avatar2.jpg"
+      }
+    },
+    {
+      "id": 7,
+      "comment": "I’m thrilled to share that I cleared the AFK on my first attempt, thanks to Dr. Mustafa Sherif and Dr. Neha Charak. Their targeted study plans, biweekly lectures, and group discussions were key to my success. Despite having a newborn just before the exam, their support kept me motivated. I highly recommend them for anyone preparing for the AFK—they ensure you give your best!",
+      "rating": 5,
+      // "description": "Student",
+      "user": {
+        "id": 7,
+        "name": "Dr. Akankssha Sharda",
+        "image": "https://example.com/avatar3.jpg"
+      }
+    },
+    
+    {
+      "id": 8,
+      "comment": "Congratulations to everyone! I wholeheartedly thank Dr. Neha and Dr. Mustafa for being wonderful mentors and genuinely kind individuals. Their relentless support and availability made a huge difference. Being part of this positive and generous group was a blessing. Their guidance made the exam much easier. Thanks for being there and providing the right support at the right time!",
+      "rating": 5,
+      "description": "Student",
+      "user": {
+        "id": 8,
+        "name": "Dr. Ramandeep Kaur",
+        "image": "https://example.com/avatar3.jpg"
+      }
+    },
+    {
+      "id": 9,
+      "comment": "Mustafa and Neha… you’re not only mentors but amazing friend and family to me. I did not know anything about Afk and you share your whole knowledge to us generously. And I have pass it in my first attempt. Sometimes, generally after mock exams (which were so helpful) I thought that I should withdraw February exam and try it in August but you called me and encouraged me. Thank you, thank you,  ",
+      "rating": 5,
+      // "description": "Student",
+      "user": {
+        "id": 9,
+        "name": "Dr. Özlem Sengezer",
+        "image": "https://example.com/avatar.jpg"
+      }
+    },
+    {
+      "id": 10,
+      "comment": "Thank you Dr Mustafa and Dr Neha for the amazing course we had it was an amazing experience I wouldn't have done it without your guidance and support     I felt more connected with everyone and loved that everyone were able to give it all no selfishness and no weird ideas for being in a competition! I'm really happy I attended the course it was a game changer",
+      "rating": 5,
+      "description": "Student",
+      "user": {
+        "id": 10,
+        "name": "Dr. Reham Mersal",
+        "image": "https://example.com/avatar2.jpg"
+      }
+    },
+    {
+      "id": 11,
+      "comment": "Thank you so much Dr Mustafa and Dr Neha for your guidance through free zoom meetings during our AFK preparation time. Special thanks to Dr Neha for sending all the articles and books on every single request of mine. Thank you so much Ma’am…..May God bless you",
+      "rating": 5,
+      // "description": "Student",
+      "user": {
+        "id": 11,
+        "name": "Dr. Jasandeep Kansal",
+        "image": "https://example.com/avatar3.jpg"
+      }
+    },
+    {
+      "id": 12,
+      "comment": "Passed my AFK. Thank you Team Strivers... ",
+      "rating": 5,
+      "description": "Student",
+      "user": {
+        "id": 12,
+        "name": "Dr. Prathibha Prakash",
+        "image": "https://example.com/avatar.jpg"
+      }
+    },
+    {
+      "id": 13,
+      "comment": "Thank you Dr. Your quiz lectures helped me a lot…Thank god I joined strivers 🙏😊  … ",
+      "rating": 5,
+      "description": "Student",
+      "user": {
+        "id": 13,
+        "name": "Dr. Prabhjot",
+        "image": "https://example.com/avatar3.jpg"
+      }
+    },
+    {
+      "id": 14,
+      "comment": "Thanks. I passed it because you guys were wonderful!!!! ",
+      "rating": 5,
+      "description": "Student",
+      "user": {
+        "id": 14,
+        "name": "Dr. Grace",
+        "image": "https://example.com/avatar2.jpg"
       }
     },
   ];

@@ -67,24 +67,27 @@ const WaterMark = ({ fileUrl }) => {
     <div style={{ width: '100%', height: '100%' }}>
       <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.0.279/build/pdf.worker.min.js`}>
         <div style={{ position: 'relative', height: '100%' }}>
-          <div
-            style={{
-              position: 'absolute',
-              top: '1rem',
-              right: '1rem',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '0.5rem',
-              background: 'rgba(255, 255, 255, 0.7)',
-              padding: '0.5rem',
-              borderRadius: '5px',
-              zIndex: 10,
-            }}
-          >
-            <ZoomInButton />
-            <ZoomOutButton />
-            <ZoomPopover />
-          </div>
+        <div
+  style={{
+    position: 'absolute',
+    top: '1rem',
+    right: '1rem',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0.5rem',
+    background: 'rgba(190, 191, 195, 0.7)', // Semi-transparent background color
+    padding: '0.5rem',
+    borderRadius: '5px',
+    zIndex: 10,
+    backdropFilter: 'blur(5px)', // Apply blur effect
+    WebkitBackdropFilter: 'blur(5px)', // For Safari support
+  }}
+>
+  <ZoomInButton />
+  <ZoomOutButton />
+  <ZoomPopover />
+</div>
+
           <Viewer 
             fileUrl={fileUrl} 
             renderPage={renderPage} 
