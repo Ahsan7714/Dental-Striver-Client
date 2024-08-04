@@ -209,9 +209,9 @@ const Rewiews = () => {
             </div>
             <div className='reviewCard-2'>
               <div className='reviewCardA-2'>
-                <div className='reviewCardA-2-img'>
-                  {/* <img src={card.user.image || image1} alt={card.user.name} className=' rounded-full h-[60px] w-[60px] object-cover' /> */}
-                </div>
+                {/* <div className='reviewCardA-2-img'>
+                  <img src={card.user.image || image1} alt={card.user.name} className=' rounded-full h-[60px] w-[60px] object-cover' />
+                </div> */}
                 <div className='reviewCardA-2-name'>
                   <h3>{card.user.name}</h3>
                   {/* <span>{card.description}</span> */}

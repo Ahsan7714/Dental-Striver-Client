@@ -115,6 +115,11 @@ function PostContent() {
   const handleChangeFullCourse = (e) => {
     const { name, value, files } = e.target;
     if (name === "pdf") {
+      // add pdf size validation of 10mb
+      if (files[0].size > 10000000) {
+        toast.error("File size should not exceed 10mb");
+        return;
+      }
       setFullCourse((prev) => ({
         ...prev,
         pdf: files[0],
