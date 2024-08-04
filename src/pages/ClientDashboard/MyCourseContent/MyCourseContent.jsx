@@ -127,7 +127,7 @@ const MyCourseContent = () => {
             ) : (
               <p>No content available.</p>
             )}
-             <div className="video-wrapper relative video-crop">
+             {/* <div className="video-wrapper relative video-crop">
               <iframe
                 src="https://drive.google.com/file/d/13cIoz3x88w23yR7od6liz6xGpChTQGRx/preview"
                 width="100%"
@@ -142,7 +142,7 @@ const MyCourseContent = () => {
 
               </div>
               <div/>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
