@@ -36,6 +36,10 @@ const CourseDetails = () => {
   };
 
   const openModal = (event) => {
+    if (!user) {
+      toast.error("Please Login to Enroll");
+      return;
+    }
     setSelectedCourse(event);
     setModalIsOpen(true);
   };

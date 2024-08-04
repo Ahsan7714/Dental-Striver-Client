@@ -34,10 +34,18 @@ const SignInPopUp = () => {
     });
   };
 
-  // Separate useEffect for handling user login
- 
 
-  // Separate useEffect for handling user registration
+  
+  // Handler for opening the sign-in modal from the sign-up modal
+  const handleOpenSignIn = () => {
+    onClose();
+    onOpen('signIn');
+  };
+
+  const handleOpenSignUp = () => {
+    onClose();
+    onOpen('signUp');
+  };
   useEffect(() => {
     if (isSignedUp) {
       toast.success('Registered Successfully');
@@ -52,48 +60,41 @@ const SignInPopUp = () => {
     }
   }, [isSignedUp, error, dispatch, onClose]);
 
-  // Handler for sign-up button click
-  const handleSignUpClick = (e) => {
-    e.preventDefault();
-    dispatch(signUp(signUpData));
-  };
-
-  // Handler for opening the sign-in modal from the sign-up modal
-  const handleOpenSignIn = () => {
-    onClose();
-    onOpen('signIn');
-  };
-
-  const handleOpenSignUp = () => {
-    onClose();
-    onOpen('signUp');
-  };
-
+  // Separate useEffect for handling user login
   useEffect(() => {
     if (isSignedIn) {
       toast.success('Logged In Successfully');
-      dispatch(loadUser()).then(() => {
-        dispatch(clearState());
-        if (user?.role === 'admin') {
-          navigate('/dashboard');
-        } else {
-          navigate('/user/my-course');
-        }
-      });
-      onClose();
+      dispatch(loadUser());
     }
     if (error) {
-      // console.log(error);
       toast.error(error);
       dispatch(clearState());
     }
-  }, [isSignedIn, dispatch, navigate, onClose, user?.role]);
+  }, [isSignedIn, error, dispatch]);
+
+  // Separate useEffect for handling navigation based on user role
+  useEffect(() => {
+    if (user) {
+      if (user.role === 'admin') {
+        navigate('/dashboard/req-users');
+      } else {
+        navigate('/user/my-course');
+      }
+      onClose();
+    }
+  }, [user, navigate, onClose]);
 
   // Handler for sign-in button click
   const handleSignIn = (e) => {
     e.preventDefault();
     dispatch(signIn({ email, password }));
   };
+  // Handler for sign-up button click
+  const handleSignUpClick = (e) => {
+    e.preventDefault();
+    dispatch(signUp(signUpData));
+  };
+
 
   if (loading) {
     return <Loader />;

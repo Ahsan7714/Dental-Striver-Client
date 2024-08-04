@@ -53,7 +53,13 @@ function UserCourse() {
 
   const handleDelete = (userId,packageId, courseId ) => {
     // console.log(userId, courseId, packageId);
-    dispatch(removeUser({ userId,packageId ,courseId  }));
+    // confirm before deleting
+    if (window.confirm("Are you sure you want to delete this course?")) {
+      dispatch(removeUser({ userId,packageId ,courseId  }));
+    } else {
+      return
+    }
+    
   };
 
   const filteredUsers = activeCourses.filter((user) => {

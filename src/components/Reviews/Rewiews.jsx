@@ -7,37 +7,70 @@ import "./Reviews.css";
 const reviews = [
     {
       "id": 1,
-      "comment": "The course exceeded my expectations with comprehensive material and engaging instruction.",
+      "comment": "Passed my AFK. Thank you Team Strivers... ",
       "rating": 5,
       "description": "Student",
       "user": {
         "id": 1,
-        "name": "John Doe",
+        "name": "Dr. Prathibha Prakash",
         "image": "https://example.com/avatar.jpg"
       }
     },
     {
       "id": 2,
-      "comment": "I found the course incredibly insightful and well-organized. Highly recommend it!",
+      "comment": "Thank you Dr. Mustafa, Dr. Neha and Dr. Ahmed. You guys made it possible, it was an overwhelming time but your support and guidance helped a lot. This would not have been possible without you all- you are a ray of sunshine. Thank you thank you so much ❤️ ",
       "rating": 5,
       "description": "Student",
       "user": {
         "id": 2,
-        "name": "Jane Smith",
+        "name": "Dr. Shuchi Singh",
         "image": "https://example.com/avatar2.jpg"
       }
     },
     {
       "id": 5,
-      "comment": "The course content was thorough and the instructor was excellent. A fantastic experience.",
+      "comment": "Thank you Dr. Your quiz lectures helped me a lot…Thank god I joined strivers 🙏😊  … ",
       "rating": 5,
       "description": "Student",
       "user": {
         "id": 3,
-        "name": "Bob Johnson",
+        "name": "Dr. Prabhjot",
         "image": "https://example.com/avatar3.jpg"
       }
-    }
+    },
+    {
+      "id": 6,
+      "comment": "I passed the Afk exam. Thank you so much Dr. Musthafa, Dr. Neha and Dr. Ahmed for your greatest support. Without your help this wouldn’t have been possible. Your lectures were very helpful for me. The most important thing is your lectures contained all the recent articles and confined notes from the reference text books. You made us focus on what is really important rather than getting overwhelmed. You taught us how to study smart instead of studying hard. Also the weekly quizzes were so helpful. That was the main reason which made me study and revise again. Your mocks were really good. Once again I thank you all soo much for being a part of this success.       ",
+      "rating": 5,
+      // "description": "Student",
+      "user": {
+        "id": 1,
+        "name": "Dr. Muneera Mohayelden",
+        "image": "https://example.com/avatar.jpg"
+      }
+    },
+    {
+      "id": 7,
+      "comment": "Thanks. I passed it because you guys were wonderful!!!! ",
+      "rating": 5,
+      "description": "Student",
+      "user": {
+        "id": 2,
+        "name": "Dr. Grace",
+        "image": "https://example.com/avatar2.jpg"
+      }
+    },
+    {
+      "id": 8,
+      "comment": "Moving to a new country itself is challenging and on top of that building up a career is another level, AFK being the first hurdle in that path. Graduating some 15 years ago and being out of dentistry at least 5 years ago, I didn’t want to give this exam in the first place! It took me almost 4 years to build up the confidence that this exam is not impossible! And that began when I connected with Strivers in one of their free zoom lectures. Dr.Mustafa was the first person I came across who said that this exam is doable! After putting a lot of thought into it, I joined their course. I am a person who likes to learn deep, but that’s not helpful all the time. Being my first attempt, I didn’t know where to start from! Dr.Mustafa, Dr.Neha, Dr.Ahmed steered me in the right direction. The lectures, weekly quizzes and discussions were super helpful! I just had to know what I am expected to know, they call it studying smart! I am so thankful for their guidance in helping me! You guys are super awesome!! … Above all, I want to thank God for His amazing ways and works in my life and His abundant blessings!!",
+      "rating": 5,
+      // "description": "Student",
+      "user": {
+        "id": 3,
+        "name": "Dr. M",
+        "image": "https://example.com/avatar3.jpg"
+      }
+    },
   ];
   
 
@@ -90,7 +123,7 @@ const Rewiews = () => {
                 </div>
                 <div className='reviewCardA-2-name'>
                   <h3>{card.user.name}</h3>
-                  <span>{card.description}</span>
+                  {/* <span>{card.description}</span> */}
                   <div className='stars'>
                   <ReactStars
                       count={5}

@@ -49,13 +49,16 @@ export const signIn = createAsyncThunk(
     }
   );
   // log out
-export const logout = createAsyncThunk(
-    "/api/users/signout",
+  export const logout = createAsyncThunk(
+    '/api/users/signout',
     async (payload, { rejectWithValue, fulfillWithValue }) => {
       try {
-        const { data } = await axios.post(`${baseurl}/api/users/signout`, {
-          withCredentials: true,
-        });
+        const { data } = await axios.post(
+          `${baseurl}/api/users/signout`,
+          {},
+          { withCredentials: true } // Ensure credentials are included
+        );
+        // remove the cookkie session from the cookies
         document.cookie = "session=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         return fulfillWithValue(data);
       } catch (error) {
@@ -63,7 +66,6 @@ export const logout = createAsyncThunk(
       }
     }
   );
-
   // get all courses
 export const getAllCourses = createAsyncThunk(
     "user/getAllCourses",

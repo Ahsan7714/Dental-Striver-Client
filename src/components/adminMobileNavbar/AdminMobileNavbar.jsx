@@ -1,6 +1,9 @@
-import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState,useEffect } from "react";
+import { Link, useLocation ,useNavigate} from "react-router-dom";
 import { MdEventNote, MdPostAdd } from "react-icons/md";
+import { useDispatch , useSelector } from "react-redux";
+import { toast } from "react-hot-toast";
+
 import {
   FaUserCheck,
   FaUser,
@@ -11,10 +14,29 @@ import {
 import { IoMdClose } from "react-icons/io";
 import "./AdminMobileNavbar.css";
 import logo from "../../assets/toplogo.png";
+import { logout,clearState } from "../../store/reducers/userReducers";
 
 function AdminMobileNavbar() {
   const location = useLocation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [isOpen, setIsOpen] = useState(false);
+  const { isLoggedOut , loading , error } = useSelector((state) => state.user);
+  useEffect(() => {
+    if (isLoggedOut) {
+      toast.success("Logged out successfully");
+      navigate("/");
+      dispatch(clearState());
+    }
+  }, [isLoggedOut, navigate]);
+
+
+  const handleLogout = () => {
+    dispatch(logout());
+    // toast.success("Logged out successfully");
+    // navigate("/");
+  };
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
@@ -32,18 +54,18 @@ function AdminMobileNavbar() {
         </div>
         <div className="  h-full overflow-y-auto  content-scrollbar rounded-t-md rounded-es-md">
           <div className="flex flex-col  px-5 py-10  gap-10">
-            <Link
-              to="/dashboard"
+          <Link
+              to="/"
               className={`
         ${
-          location.pathname == "/dashboard"
+          location.pathname == ""
             ? "bg-gradient-to-r from-[#2b5870] to-[#6a97af] text-white "
             : "text-[#000000a5] "
         }
         flex gap-2 items-center text-[20px] h-10 px-4 rounded-md`}
             >
-              {/* <FaUserCheck /> */}
-              <p>Users</p>
+              {/* <FaUserPlus /> */}
+              <p>Home</p>
             </Link>
             <Link
               to="/dashboard/req-users"
@@ -98,6 +120,17 @@ function AdminMobileNavbar() {
               {/* <MdPostAdd /> */}
               <p>Post Content</p>
             </Link>
+            <button
+            onClick={handleLogout}
+             className={`
+        ${
+          location.pathname == ""
+            ? "bg-gradient-to-r from-[#2b5870] to-[#6a97af] text-white "
+            : "text-[#000000a5] "
+        }
+        flex gap-2 items-center text-[20px] h-10 px-4 rounded-md`}>
+              Logout
+            </button>
           </div>
         </div>
       </div>

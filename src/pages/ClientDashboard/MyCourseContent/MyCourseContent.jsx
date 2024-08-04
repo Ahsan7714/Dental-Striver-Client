@@ -152,7 +152,7 @@ const MyCourseContent = () => {
       {isModalOpen && selectedPdf && (
         <div className="modal">
           <div className="modal-content h-[98vh]">
-            <span className="close-button" onClick={closeModal}>
+            <span className="close-button cursor-pointer z-[999] absolute top-0 right-0 bg-[#000000b5] text-white" onClick={closeModal}>
               &times;
             </span>
             <WaterMark fileUrl={selectedPdf} />

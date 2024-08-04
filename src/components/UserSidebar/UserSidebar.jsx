@@ -34,7 +34,7 @@ const AdminSidebar = () => {
           className={`
             ${
               location.pathname === "/user/my-course" ||
-              location.pathname === "/user/my-course/content"
+              location.pathname === "/user/my-course/:courseId/:packageId"
                 ? "bg-gradient-to-r from-[#2b5870] to-[#6a97af] text-white "
                 : "text-[#000000a5] "
             }
