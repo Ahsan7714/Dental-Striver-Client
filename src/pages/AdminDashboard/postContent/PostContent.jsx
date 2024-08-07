@@ -116,10 +116,7 @@ function PostContent() {
     const { name, value, files } = e.target;
     if (name === "pdf") {
       // add pdf size validation of 10mb
-      if (files[0].size > 10000000) {
-        toast.error("File size should not exceed 10mb");
-        return;
-      }
+     
       setFullCourse((prev) => ({
         ...prev,
         pdf: files[0],
@@ -131,6 +128,7 @@ function PostContent() {
       }));
     }
   };
+  
 
   const handlePackageChange = (packageId, packageTitle) => {
     setSelectedPackage(packageId);
@@ -163,11 +161,37 @@ function PostContent() {
       return null;
     }
   };
+  const handleUploadToFirebase = (file) => {
+    return new Promise((resolve, reject) => {
+      const storageRef = ref(storage, `pdfs/${file.name}`);
+      const uploadTask = uploadBytesResumable(storageRef, file);
+  
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          setUploadProgress(progress);
+          console.log(`Upload is ${progress}% done`);
+        },
+        (error) => {
+          console.error("Error uploading file to Firebase", error);
+          toast.error("Error uploading file");
+          reject(error);
+        },
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            resolve(downloadURL);
+          });
+        }
+      );
+    });
+  };
+  
   
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const contentData = isFullCourse
       ? {
           ...fullCourse,
@@ -183,19 +207,24 @@ function PostContent() {
           courseId: selectedCourse,
           packageId: selectedPackage,
         };
-
-        if (isFullCourse && fullCourse.pdf) {
-          const pdfUrl = await handleUploadToCloudinary(fullCourse.pdf);
-          if (pdfUrl) {
-            contentData.pdfLink = pdfUrl;
-            contentData.contentType = "pdf";
-          }
-          setUploadProgress(0); // Reset progress after upload is complete
+  
+    if (isFullCourse && fullCourse.pdf) {
+      try {
+        const pdfUrl = await handleUploadToFirebase(fullCourse.pdf);
+        if (pdfUrl) {
+          contentData.pdfLink = pdfUrl;
+          contentData.contentType = "pdf";
         }
-        
-
+        setUploadProgress(0); // Reset progress after upload is complete
+      } catch (error) {
+        console.error("Error uploading PDF", error);
+        return;
+      }
+    }
+  
     dispatch(postContent(contentData));
   };
+  
 
   const handleCoursesChange = (courseId, courseTitle) => {
     setSelectedCourse(courseId);

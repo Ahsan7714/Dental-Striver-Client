@@ -90,7 +90,7 @@ const WaterMark = ({ fileUrl }) => {
 </div>
 
           <Viewer 
-            fileUrl={"https://firebasestorage.googleapis.com/v0/b/strivers-3e7bc.appspot.com/o/pdfs%2F11686.pdf?alt=media&token=e8782626-a421-4fcb-9751-668a9219764f"} 
+            fileUrl={fileUrl} 
             renderPage={renderPage} 
             plugins={[zoomPluginInstance]} 
             defaultScale={SpecialZoomLevel.PageWidth} 
