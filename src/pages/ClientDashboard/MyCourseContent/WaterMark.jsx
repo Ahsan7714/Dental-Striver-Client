@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 const WaterMark = ({ fileUrl }) => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
+  
 
   useEffect(() => {
     dispatch(loadUser());
