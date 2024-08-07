@@ -9,6 +9,8 @@ import { useDispatch, useSelector } from 'react-redux';
 const WaterMark = ({ fileUrl }) => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
+  const proxyUrl = 'https://dental-backend.vercel.app/proxy?url=';
+  const proxiedFileUrl = `${proxyUrl}${encodeURIComponent(fileUrl)}`;
 
   useEffect(() => {
     dispatch(loadUser());
@@ -89,7 +91,7 @@ const WaterMark = ({ fileUrl }) => {
 </div>
 
           <Viewer 
-            fileUrl={fileUrl} 
+            fileUrl={"https://firebasestorage.googleapis.com/v0/b/strivers-3e7bc.appspot.com/o/pdfs%2Fantibiotics1pdf-compressed.pdf?alt=media&token=c8ac5324-2be7-433e-89ec-9e51923eb718"} 
             renderPage={renderPage} 
             plugins={[zoomPluginInstance]} 
             defaultScale={SpecialZoomLevel.PageWidth} 
