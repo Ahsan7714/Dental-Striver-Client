@@ -20,6 +20,8 @@ import NewPackage from './pages/AdminDashboard/newPackage/NewPackage'
 import { useDispatch, useSelector } from "react-redux";
 import React, { useState, useEffect } from "react";
 import { loadUser } from './store/reducers/userReducers'
+import ResetPassword from './pages/ResetPassword/ResetPassword'
+import Loader from './components/Spinner/Loader'
 
 function App() {
   const dispatch = useDispatch();
@@ -29,6 +31,8 @@ function App() {
   
     dispatch(loadUser());
   }, []);
+
+
 
 
   return (
@@ -50,6 +54,7 @@ function App() {
         <Route path='/dashboard/add-courses' element={<NewCourse/>}/>
         <Route path='/dashboard/post-content' element={<PostContent/>}/>
         <Route path='/dashboard/add-package' element={<NewPackage/>}/> 
+        <Route path='/reset-password/:token' element={<ResetPassword/>}/>
       </Routes>
 
     
