@@ -11,10 +11,6 @@ const Navbar = () => {
   const { onOpen, setShowModal, setType } = useAuthPopUp();
   const { user, loading, error } = useSelector(state => state.user);
 
-  useEffect(() => {
-  
-    // dispatch(loadUser());
-  }, []);
 
   const handleShowPopUp = (actionType) => {
     setType(actionType);
